@@ -8,10 +8,8 @@ const app = express()
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
 
-app.get('/', (req, res) => {
-  res.render('index')
-})
+app.use('/', require('./routes/index-router'))
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log(`Aplikasi berjalan pada http://localhost:${port}`)
 })

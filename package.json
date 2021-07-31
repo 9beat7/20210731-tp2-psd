@@ -2,7 +2,8 @@
   "name": "20210731-tp2-psd",
   "version": "1.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start" : "node server",
+    "dev": "nodemon server"
   },
   "author": "Thefan",
   "license": "UNLICENSED",

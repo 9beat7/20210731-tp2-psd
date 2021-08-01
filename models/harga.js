@@ -5,9 +5,9 @@ const harga = {
     { id: 3, kelas: 'Vip', harga: 250000 }
   ],
   fasilitas: [
-    { extra_bed: 50000 },
-    { cleaning: 25000 }
+    { id: 1, fasilitas: 'Extra Bed', harga: 50000 },
+    { id: 2, fasilitas: 'Room Cleaning', harga: 25000 }
   ]
 }
 
-module.exports = harga
+exports.data_harga = harga

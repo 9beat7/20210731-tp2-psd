@@ -17,6 +17,14 @@ exports.tambah_reservasi = (status, nama, paket, hari) => {
 }
 
 // Penambahan data awal
+reservasi.push({
+  id: '1',
+  status: 1,
+  nama: 'Uji Coba',
+  paket: 2,
+  hari: 5,
+  tambahan: [1, 2]
+})
 this.tambah_reservasi(1, 'Budi Prakaso', 1, 20)
 this.tambah_reservasi(1, 'FRANEKNSITEN', 2, 208)
 this.tambah_reservasi(1, 'Banana', 3, 123)

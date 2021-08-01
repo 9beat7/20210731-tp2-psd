@@ -1,34 +1,11 @@
 const express = require('express')
 const router = express.Router()
 
-const harga = require('../models/harga')
-const reservasi = require('../models/reservasi')
+const reservasiController = require('../controllers/reservasi-controller')
 
-router.get('/', (req, res) => {
-  res.render('index', { harga: harga, reservasi: reservasi })
-})
-
-router.get('/reservasi', (req, res) => {
-  res.render('reservasi_form', {
-    kelas: harga.kelas
-  })
-})
-
-router.post('/reservasi', (req, res) => {
-  reservasi.push({
-    id: 23,
-    status: 1,
-    nama: req.body.nama,
-    paket: req.body.kelas,
-    hari: req.body.hari
-  })
-  res.redirect('/')
-})
-
-router.get('/reservasi/:id', (req, res) => {
-  res.render('reservasi_detail', {
-    data: reservasi.find(({ id }) => parseInt(req.params.id))
-  })
-})
+router.get('/', reservasiController.index)
+router.get('/reservasi', reservasiController.reservasi_get)
+router.post('/reservasi', reservasiController.reservasi_post)
+router.get('/reservasi/:id', reservasiController.reservasi_detail)
 
 module.exports = router

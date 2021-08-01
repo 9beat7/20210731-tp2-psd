@@ -2,8 +2,8 @@
   "name": "20210731-tp2-psd",
   "version": "1.0.0",
   "scripts": {
-    "start" : "node server",
-    "dev": "nodemon server"
+    "start" : "node app",
+    "dev": "nodemon app"
   },
   "author": "Thefan",
   "license": "UNLICENSED",

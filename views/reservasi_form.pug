@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1 Formulir Reservasi
+
+  form(action="/reservasi", method="post")
+
+    label(for="nama") Nama: 
+    input#nama(type="text", name="nama")
+
+    each i in kelas
+      div
+        input(id=i.id, type="radio", name="kelas", value=i.id)
+        label(for=i.id) #{i.kelas} #{i.harga} per hari
+    
+    label(for="hari") Banyak Hari: 
+    input#hari(type="number", name="hari")
+
+    br
+
+    input(type="submit", value="Reservasi")

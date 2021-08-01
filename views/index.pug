@@ -1,3 +1,20 @@
-hi Yeha
+extends layout
 
-p= harga.kelas[0].single
+block content
+  h1 Dasbor Resepsionis
+
+  h2 Daftar Reservasi
+  table
+    thead
+      tr
+        th ID
+        th Nama
+        th Paket
+        th Hari
+    tbody
+      each i in reservasi
+        tr
+          td= i.id
+          td= i.nama
+          td= i.paket
+          td= i.hari

@@ -14,4 +14,21 @@ router.get('/reservasi', (req, res) => {
   })
 })
 
+router.post('/reservasi', (req, res) => {
+  reservasi.push({
+    id: 23,
+    status: 1,
+    nama: req.body.nama,
+    paket: req.body.kelas,
+    hari: req.body.hari
+  })
+  res.redirect('/')
+})
+
+router.get('/reservasi/:id', (req, res) => {
+  res.render('reservasi_detail', {
+    data: reservasi.find(({ id }) => parseInt(req.params.id))
+  })
+})
+
 module.exports = router

@@ -11,6 +11,7 @@ block content
         th Nama
         th Paket
         th Hari
+        th Fasilitas
         th Link
     tbody
       each i in reservasi
@@ -19,13 +20,14 @@ block content
           td= i.nama
           td= i.paket
           td= i.hari
+          td= i.fasilitas
           td
             a(href=`reservasi/${i.id}`) Link
   
   h2 Daftar Harga
   h3 Kelas
   each i in harga.kelas
-    p #{i.kelas} Rp#{i.harga}
+    p ID: #{i.id} #{i.kelas} Rp#{i.harga}
   h3 Fasilitas
   each i in harga.fasilitas
-    p #{i.fasilitas} Rp#{i.harga}
+    p ID: #{i.id} #{i.fasilitas} Rp#{i.harga}

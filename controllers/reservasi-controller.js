@@ -23,3 +23,10 @@ exports.reservasi_detail = (req, res) => {
     harga: harga.data_harga
   })
 }
+
+exports.reservasi_keluar = (req, res) => {
+  const data = reservasi.data_reservasi_berdasarkan_id(req.params.id)
+  if (req.body.fasilitas) data.fasilitas.push(...req.body.fasilitas)
+  console.log(data)
+  res.redirect('/')
+}

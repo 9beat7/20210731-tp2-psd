@@ -17,7 +17,7 @@ exports.reservasi_get = (req, res) => {
 }
 
 exports.reservasi_post = (req, res) => {
-  reservasi.tambah_reservasi(1, req.body.nama, req.body.kelas, req.body.hari)
+  reservasi.tambah_reservasi(1, req.body.nama, parseInt(req.body.kelas), parseInt(req.body.hari))
   res.redirect('/')
 }
 

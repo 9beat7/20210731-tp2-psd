@@ -31,3 +31,7 @@ block content
   h3 Fasilitas
   each i in harga.fasilitas
     p ID: #{i.id} #{i.fasilitas} Rp#{i.harga}
+  
+  h2 Daftar Tagihan
+  each i in tagihan
+    p ID: #{i.id} ID Reservasi: #{i.id_reservasi} Rp#{i.jumlah}

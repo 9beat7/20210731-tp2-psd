@@ -8,12 +8,17 @@ block content
   p Paket: #{data.paket}
   p Hari: #{data.hari}
 
-  h2 Formulir Keluar
-  p Tambahan?
-  form(action=`/reservasi/${data.id}/keluar`, method="post")
-    each i in harga.fasilitas
-      div
-        input(id=i.id, type="checkbox", name="fasilitas", value=i.id)
-        label(for=i.id) #{i.fasilitas} #{i.harga}
-    br
-    input(type="submit", value="Keluar")
+  if data.status == 1
+    h2 Formulir Keluar
+    p Tambahan?
+    form(action=`/reservasi/${data.id}/keluar`, method="post")
+      each i in harga.fasilitas
+        div
+          input(id=i.id, type="checkbox", name="fasilitas", value=i.id)
+          label(for=i.id) #{i.fasilitas} #{i.harga}
+      br
+      input(type="submit", value="Keluar")
+  else
+    h2 Daftar Fasilitas
+    p Fasilitas: #{data.fasilitas}
+

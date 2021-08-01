@@ -10,4 +10,8 @@ const harga = {
   ]
 }
 
+exports.data_harga_kelas_berdasarkan_id = (idTarget) => harga.kelas.find(({ id }) => (id === (idTarget)))
+
+exports.data_harga_fasilitas_berdasarkan_id = (idTarget) => harga.fasilitas.find(({ id }) => (id === idTarget))
+
 exports.data_harga = harga
